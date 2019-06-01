@@ -11,8 +11,13 @@ class App extends Component {
   }
 
   componentDidUpdate = () => {
-    console.log('state', this.state);
-    
+    console.log('componentDidUpdate - state read', this.state);
+    if(this.state.value !== "" &&
+      this.state.firstNumber !== "" &&
+      this.state.secondNumber !== "" &&
+      this.state.symbol !== "") {
+        console.log('DID THIS WORK????', this.state); 
+    }
   }
 
   empty = () => {
@@ -74,6 +79,11 @@ class App extends Component {
         value: Number(this.state.firstNumber) * Number(this.state.secondNumber) 
       })
     }
+    this.logState();
+    // console.log('CLICK EQUALS STATE', this.state);
+  }
+
+  logState = () => {
     console.log('CLICK EQUALS STATE', this.state);
   }
 
@@ -104,7 +114,7 @@ render() {
       <button onClick={this.handleSymbolChange('symbol')} value="+">+</button>
      </div>
      <div>
-      <button nClick={this.handleDecimalChange('value')} value=".">.</button>
+      <button onClick={this.handleDecimalChange('value')} value=".">.</button>
       <button onClick={this.handleZeroChange('value')} value="0">0</button>
       <button onClick={this.submitEquation}>=</button>
       <button onClick={this.handleSymbolChange('symbol')} value="-">-</button>
