@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
   });
 
 router.get('/', (req, res) => {
-const queryText = 'SELECT * FROM calc DESC limit 10';
+const queryText = 'SELECT * FROM calc ORDER BY id desc limit 10;';
 pool.query(queryText)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {

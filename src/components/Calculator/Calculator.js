@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 // import './App.css';
 
 class App extends Component {
+  
+  componentDidMount = () => {
+    this.props.dispatch({ type: 'GET_CALC' });
+}
 
   state = {
     value: "",
@@ -19,6 +23,7 @@ class App extends Component {
       this.state.symbol !== "") {
         console.log('DID THIS WORK????', this.state);
         this.props.dispatch({ type: 'ADD_CALC', payload: this.state })
+        this.empty();
     }
   }
 
@@ -82,6 +87,7 @@ class App extends Component {
       })
     }
     this.logState();
+    // this.empty();
     // console.log('CLICK EQUALS STATE', this.state);
   }
 
@@ -128,7 +134,11 @@ render() {
 
    <div>
      Entry History
-
+      {this.props.reduxState.calculationsReducer.map((calc) =>
+        <div className="bioCard">
+            <ul>{calc.firstNumber}{calc.symbol}{calc.secondNumber}={calc.value}</ul>  
+        </div>
+      )}
    </div>
   </div>
   );
