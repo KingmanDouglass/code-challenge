@@ -48,7 +48,7 @@ class App extends Component {
     }
   }
 
-  handleEquation = number => event => {
+  handleZeroChange = number => event => {
     if (this.state.value !== "") {
       this.setState({ 
         value: this.state.value + event.target.value})
@@ -86,9 +86,9 @@ render() {
         <div>{this.state.value}</div>
       </div>
      <div>
-      <button onClick={this.handleChange('value')} value="2">7</button>
-      <button onClick={this.handleChange('value')} value="2">8</button>
-      <button onClick={this.handleChange('value')} value="2">9</button>
+      <button onClick={this.handleChange('value')} value="7">7</button>
+      <button onClick={this.handleChange('value')} value="8">8</button>
+      <button onClick={this.handleChange('value')} value="9">9</button>
       <button onClick={this.handleSymbolChange('symbol')} value="/">/</button>
      </div>
      <div>
