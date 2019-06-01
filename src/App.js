@@ -16,7 +16,8 @@ class App extends Component {
       this.state.firstNumber !== "" &&
       this.state.secondNumber !== "" &&
       this.state.symbol !== "") {
-        console.log('DID THIS WORK????', this.state); 
+        console.log('DID THIS WORK????', this.state);
+        this.props.dispatch({ type: 'ADD_CALC', payload: this.state })
     }
   }
 
@@ -122,6 +123,11 @@ render() {
      <div>
       <button onClick={this.empty}>Clear</button>
      </div>
+   </div>
+
+   <div>
+     Entry History
+
    </div>
   </div>
   );
