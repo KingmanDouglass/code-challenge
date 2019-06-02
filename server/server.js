@@ -3,14 +3,16 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 // Route includes
-const plantRouter = require('./routes/project.router');
+const projectRouter = require('./routes/project.router');
+
+// FYI another template used
 
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 /* Routes */
-app.use('/api/sezzle', plantRouter);
+app.use('/api/sezzle', projectRouter);
 
 // Serve static files
 app.use(express.static('build'));

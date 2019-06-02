@@ -1,6 +1,8 @@
 const pg = require('pg');
 const url = require('url');
 
+//FYI this is just a template I use for previous projects with minor alterations depending on what I am doing
+
 let config = {};
 
 if (process.env.DATABASE_URL) {

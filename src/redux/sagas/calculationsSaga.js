@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
+//POST
 function* addCalc(action) {
     try {
         console.log('POST calculations', action);
@@ -12,6 +13,7 @@ function* addCalc(action) {
     }
   }
 
+//GET
 function* getCalc() {
     console.log('GET ten most recent calculations');
     try{
@@ -23,8 +25,6 @@ function* getCalc() {
         alert(`Sorry couldn't get the recent calculations. Try again later.`)
     }
 }
-
-
 
 function* bondSaga() {
     yield takeLatest(`ADD_CALC`, addCalc)

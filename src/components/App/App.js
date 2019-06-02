@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Calculator from '../Calculator/Calculator';
+import './App.css';
 
-
+//basic set up to call the calculator component and give the page a header
 const App = () => (
-  <div>
+  <div className="App">
     <header>
       <h1>Sezzle Code Challenge Calculatoer</h1>
     </header>
