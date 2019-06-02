@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   
-  // //as of right now this is my quick fix to constantly be getting all database entries
-  // componentDidMount = () => {
-  //   this.interval = setInterval(() => this.props.dispatch({ type: 'GET_CALC' }), 1000 );
-  //   // this.props.dispatch({ type: 'GET_CALC' });
-  // }
+  //as of right now this is my quick fix to constantly be getting all database entries
+  componentDidMount = () => {
+    this.interval = setInterval(() => this.props.dispatch({ type: 'GET_CALC' }), 1000 );
+    // this.props.dispatch({ type: 'GET_CALC' });
+  }
 
   //continuation of getting db entries and limiting data
   componentWillUnmount = () => {
     clearInterval(this.interval);
   }
 
-  componentDidMount = () => {
-    this.props.dispatch({ type: 'GET_CALC' });
-  }
+  // componentDidMount = () => {
+  //   this.props.dispatch({ type: 'GET_CALC' });
+  // }
 
   //set state for the different inputs being used in the functionality
   state = {
