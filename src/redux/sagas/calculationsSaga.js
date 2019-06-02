@@ -4,7 +4,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 //POST
 function* addCalc(action) {
     try {
-        console.log('POST calculations', action);
+        // console.log('POST calculations', action);
         yield axios.post(`/api/sezzle/`, action.payload);
         yield put({ type: 'GET_CALC' });
     }catch (error) {
@@ -15,7 +15,7 @@ function* addCalc(action) {
 
 //GET
 function* getCalc() {
-    console.log('GET ten most recent calculations');
+    // console.log('GET ten most recent calculations');
     try{
         const getResponse = yield axios.get(`/api/sezzle/`);
         const action = {type: 'SET_CALC', payload: getResponse.data};
