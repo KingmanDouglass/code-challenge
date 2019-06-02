@@ -6,7 +6,7 @@ import './App.css';
 const App = () => (
   <div className="App">
     <header>
-      <h1>Sezzle Code Challenge Calculatoer</h1>
+      <h1>Sezzle Code Challenge Calculator</h1>
     </header>
     <Calculator />
   </div>
